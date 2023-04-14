@@ -1,4 +1,4 @@
-// #pragma once
+
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -13,7 +13,6 @@ using namespace std;
 namespace ariel{
 Game::Game(Player& A, Player& B): playerA(A), playerB(B)
 {
-    // if(this->playerA == NULL || !this->playerB) throw invalid_argument("one of the players entered are invalid");
     if(this->playerA.playing_game || this->playerB.playing_game) throw invalid_argument("one of the players are currently playing in another game");
     this->current_turn = 0;
     this->winner = 0;
@@ -47,7 +46,6 @@ void Game::dealCards()
             counter++;
         }
     }
-    // cout<< counter<< endl;
     int j = 0;
     counter = 0;
     for(size_t i = 0 ; i< 52; i++)
@@ -60,7 +58,6 @@ void Game::dealCards()
             counter++;
         }
     }
-    // cout<< counter<< endl;
     for(size_t i =0 ;i< 52;i++)
     {
         this->all_cards[i] = 0;
@@ -71,7 +68,6 @@ void Game::playTurn()
 {
     if (&playerA == &playerB) throw invalid_argument("same player entered twice");
     if(game_ended) throw invalid_argument("game ended...no more turns.");
-    // int start_index = this->current_turn;
     this->printLast = "";
     int flag = 0; 
     int count_winnings = 0;
@@ -91,8 +87,6 @@ void Game::playTurn()
         {
             this->printLast += playerA.name + " played " + (playerA.cards_left[this->current_turn]).convertCard() + " " +
                               playerB.name + " played " + (playerB.cards_left[this->current_turn]).convertCard() + ". " + playerA.name + " wins.";
-            // this->playerA.cards_won[this->playerA.index_card_won] = this->playerB.cards_left[this->current_turn];
-            // cout<< "==============================================================================="<<endl;
             this->playerA.num_of_cards_won += count_winnings + 1;
             this->flipped = false;
             this->current_turn += 1;

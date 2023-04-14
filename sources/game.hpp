@@ -19,13 +19,9 @@ namespace ariel
             Player& playerB;
             size_t current_turn;
             int amount_of_draws;
-            // int all_cards[NUM_OF_CARDS_IN_DECK];
             array<int, NUM_OF_CARDS_IN_DECK> all_cards;
-            int winner; // 1- player 1, 2- player 2, 0- none, 3- draw
-            // int game_over; //0- not over, 1- over
+            int winner;
             string printL;
-            // string printStatA;
-            // string printStatB;
             string printLast;
             bool flipped;
             bool game_ended;

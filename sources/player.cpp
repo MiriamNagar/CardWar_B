@@ -7,24 +7,15 @@ using namespace std;
 using namespace ariel;
 
 
-Player::Player(string name) //: cards_left(26)
+Player::Player(string name)
 {
-    // if(!name) throw invalid_argument("Invalid name");
     this->cards_left = {};
     this->name = name;
     this->num_of_cards_won = 0;
     this->num_of_cards_left = 0;
     this->playing_game = false;
-    // this->cards_won = {};
-    // this->cards_left ;
-    // this->index_card_won = 0;
     
 }
-
-// Player::Player(Player p)
-// {
-//     this(p.name);
-// }
 
 int Player::stacksize()
 {
